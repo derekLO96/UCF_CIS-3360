@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.27)  29 SEP 2025 21:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.27)  30 SEP 2025 15:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -331,58 +331,36 @@ Package pdftex.def Info: Figures/Timeline-of-Solorigate-attacks.png  used on inp
 (pdftex.def)             Requested size: 245.71754pt x 86.38391pt.
 
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 151.
+<Figures/SUNBURST-path.png, id=12, 1056.94875pt x 343.2825pt>
+File: Figures/SUNBURST-path.png Graphic file (type png)
+<use Figures/SUNBURST-path.png>
+Package pdftex.def Info: Figures/SUNBURST-path.png  used on input line 145.
+(pdftex.def)             Requested size: 245.71754pt x 79.80186pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 157.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 151.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 157.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 151--153
+Underfull \hbox (badness 10000) in paragraph at lines 157--159
 []\OT1/ptm/m/n/10 Vector: Com-pro-mise of So-lar-Winds' CI/Build
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--153
+Underfull \hbox (badness 10000) in paragraph at lines 157--159
 \OT1/ptm/m/n/10 en-vi-ron-ment to in-sert ma-li-cious code into the
  []
 
 
-Underfull \hbox (badness 3354) in paragraph at lines 151--153
+Underfull \hbox (badness 3354) in paragraph at lines 157--159
 \OT1/ptm/m/n/10 Orion build through the mask-ing of a le-git-i-mate
  []
 
 
-Underfull \hbox (badness 2173) in paragraph at lines 151--153
+Underfull \hbox (badness 2173) in paragraph at lines 157--159
 \OT1/ptm/m/n/10 dll file(SolarWinds.Orion.Core.BusinessLayer.dll). The
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 151--153
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 153--155
-
- []
-
-
-
-[2 <./Figures/Timeline-of-Solorigate-attacks.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 155--157
-
- []
-
-
-Underfull \hbox (badness 1688) in paragraph at lines 157--159
-\OT1/ptm/m/n/10 the at-tack-ers per-form hands-on key-board op-er-a-tions
- []
-
-
-Underfull \hbox (badness 3029) in paragraph at lines 157--159
-\OT1/ptm/m/n/10 to har-vest cre-den-tials, lat-eral move-ment, and data
  []
 
 
@@ -391,74 +369,141 @@ Underfull \hbox (badness 10000) in paragraph at lines 157--159
  []
 
 
-Underfull \hbox (badness 3386) in paragraph at lines 159--161
-\OT1/ptm/m/n/10 from the So-lar-Winds' build en-vi-ron-ment to de-lay
- []
 
-
+[2 <./Figures/Timeline-of-Solorigate-attacks.png> <./Figures/SUNBURST-path.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 159--161
 
  []
 
 
-LaTeX Warning: Citation `b1' on page 3 undefined on input line 187.
+Underfull \hbox (badness 10000) in paragraph at lines 161--163
+
+ []
 
 
-LaTeX Warning: Citation `b2' on page 3 undefined on input line 188.
+Underfull \hbox (badness 1688) in paragraph at lines 163--165
+\OT1/ptm/m/n/10 the at-tack-ers per-form hands-on key-board op-er-a-tions
+ []
 
 
-LaTeX Warning: Citation `b3' on page 3 undefined on input line 189.
+Underfull \hbox (badness 3029) in paragraph at lines 163--165
+\OT1/ptm/m/n/10 to har-vest cre-den-tials, lat-eral move-ment, and data
+ []
 
 
-LaTeX Warning: Citation `b3' on page 3 undefined on input line 189.
+Underfull \hbox (badness 10000) in paragraph at lines 163--165
+
+ []
 
 
-LaTeX Warning: Citation `b3' on page 3 undefined on input line 189.
+Underfull \hbox (badness 3386) in paragraph at lines 165--167
+\OT1/ptm/m/n/10 from the So-lar-Winds' build en-vi-ron-ment to de-lay
+ []
 
 
-LaTeX Warning: Citation `b3' on page 3 undefined on input line 190.
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
 
-
-LaTeX Warning: Citation `b4' on page 3 undefined on input line 198.
-
-
-LaTeX Warning: Citation `b5' on page 3 undefined on input line 199.
+ []
 
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
+Underfull \hbox (badness 2726) in paragraph at lines 180--183
+\OT1/ptm/m/n/10 ing): SUN-BURST served as a stealthy, sur-viv-able
+ []
+
+
+
+[3]
+Underfull \hbox (badness 3792) in paragraph at lines 244--245
+\OT1/ptm/m/it/8 In-sider\OT1/ptm/m/n/8 , Jan. 25, 2024. [On-line]. Avail-able: $https : / / www . microsoft .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
+\OT1/ptm/m/n/8 com / en-[]us / security / security-[]insider / threat-[]landscape / midnight-[]blizzard$.
+ []
+
+
+
+
+Underfull \hbox (badness 1789) in paragraph at lines 245--246
+[]\OT1/ptm/m/n/8 MITRE, ``Op-er-a-tion Ghost (Cam-paign C0023),'' \OT1/ptm/m/it/8 MITRE ATT&CK\OT1/ptm/m/n/8 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 []\OT1/ptm/m/n/8 Microsoft Cy-ber De-fense Op-er-a-tions Cen-ter and Mi-crosoft
  []
 
 
-Underfull \hbox (badness 8170) in paragraph at lines 209--210
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 \OT1/ptm/m/n/8 Threat In-tel-li-gence, ``Deep Dive into the Solori-gate Second-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 \OT1/ptm/m/n/8 Stage Ac-ti-va-tion: From SUN-BURST to TEARDROP and
  []
 
 
-Underfull \hbox (badness 7558) in paragraph at lines 209--210
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 \OT1/ptm/m/n/8 Rain-drop,'' \OT1/ptm/m/it/8 Mi-crosoft Se-cu-rity Blog\OT1/ptm/m/n/8 , Jan. 20, 2021. [On-line].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 \OT1/ptm/m/n/8 Avail-able: $https : / / www . microsoft . com / en-[]us / security / blog / 2021 / 01 / 20 /
  []
 
 
-Overfull \hbox (77.825pt too wide) in paragraph at lines 209--210
+Overfull \hbox (69.825pt too wide) in paragraph at lines 246--247
 \OT1/ptm/m/n/8 deep-[]dive-[]into-[]the-[]solorigate-[]second-[]stage-[]activation-[]from-[]sunburst-[]to-[]teardrop-[]and-[]raindrop/$.
  []
 
 
-Underfull \hbox (badness 3219) in paragraph at lines 210--211
+Underfull \hbox (badness 4899) in paragraph at lines 247--248
 []\OT1/ptm/m/n/8 CoreTech Staff, ``6 Mo-ti-va-tions of Cy-ber Crim-i-nals,'' \OT1/ptm/m/it/8 CoreTech
+ []
+
+
+Underfull \hbox (badness 1931) in paragraph at lines 248--249
+[]\OT1/ptm/m/n/8 J. Hakala and J. Mel-ny-chuk, *Rus-sia's Strat-egy in Cy-berspace*,
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 248--249
+\OT1/ptm/m/n/8 Jun. 2021. [On-line]. Avail-able: $https : / / stratcomcoe . org / cuploads / p^^Lles /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
+[]\OT1/ptm/m/n/8 National Cy-ber Se-cu-rity Cen-tre (UK), ``Ad-vi-sory: Fur-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
+\OT1/ptm/m/n/8 ther TTPs As-so-ci-ated with SVR Cy-ber Ac-tors,'' May
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
+\OT1/ptm/m/n/8 2021. [On-line]. Avail-able: $https : / / www . ncsc . gov . uk / ^^Lles /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
+\OT1/ptm/m/n/8 Advisory-[]further-[]TTPs-[]associated-[]with-[]SVR-[]cyber-[]actors . pdf$.
+ []
+
+
+Underfull \hbox (badness 3815) in paragraph at lines 250--251
+[]\OT1/ptm/m/n/8 T. Herr, W. Loomis, E. Schroeder, S. Scott, S. Han-dler, and
+ []
+
+
+Underfull \hbox (badness 3168) in paragraph at lines 250--251
+\OT1/ptm/m/n/8 T. Zuo, *Bro-ken Trust: Lessons from Sun-burst*, At-lantic Coun-
  []
 
 
@@ -474,29 +519,25 @@ Before submitting the final camera ready copy, remember to:
 
 
 
-[3] (./oliveira_derek_research_paper.aux)
+[4] (./oliveira_derek_research_paper.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 4902 strings out of 467748
- 77256 string characters out of 5426965
- 506740 words of memory out of 5000000
- 33546 multiletter control sequences out of 15000+600000
- 664637 words of font info for 111 fonts, out of 8000000 for 9000
+ 4906 strings out of 467748
+ 77554 string characters out of 5426965
+ 506762 words of memory out of 5000000
+ 33551 multiletter control sequences out of 15000+600000
+ 663530 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,8n,71p,579b,348s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on oliveira_derek_research_paper.pdf (3 pages, 165865 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on oliveira_derek_research_paper.pdf (4 pages, 209303 bytes).
 PDF statistics:
  48 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 27 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

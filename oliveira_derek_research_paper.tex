@@ -81,7 +81,7 @@ learned and how this incident reshaped modern approaches to cyber defense.
 %and Purpose & Motivation (financial, political, espionage, disruption).
 \subsection{NOBELIUM}
 NOBELIUM, or as they were previously known; APT29/UNC2452/Cozy Bear/Midnight Blizzard/The Dukes,
-are a Russian based threat actor attributed by the U.S. and European leaders as the foreign
+is a Russian based threat actor attributed by the U.S. and European leaders as the foreign
 intelligence service of the Russian Federation\cite{Microdoft2024NOBELIUM}. NOBELIUM can be traced back
 to 2013, when European and American ministries of foreign affairs reported data breaches and theft of data 
 through an incident that was latter named "Operation Ghost."\cite{MITREFirstNOBELIUMAttack} NOBELIUM is known for manipulating trust
@@ -137,9 +137,15 @@ infrastructure. The attack represents a clear departure from disruptive cyber in
 %and Distinctive Features (innovations, what made it effective/different).
 \subsection{Overview of SUNBURST (S0559)}
 SUNBURST (MITRE S0559) was a trojanized component of SolarWinds' Orion platform that was compiled into
-signed product updates and distributed to customers. Because the malicious code was delivered inside through vendor signed updates, it bypassed many integrity and whitelist checks
+signed product updates and distributed to customers, as noted in figure \ref{fig:SUNBURSTPath}. Because the malicious code was delivered inside through vendor signed updates, it bypassed many integrity and whitelist checks
 and achieved wide, trusted distribution. The implant combined application-layer mimicry, protocol obfuscation, and context-aware activation logic to remain dormant and undetected
 until it found valuable execution environment.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3.4in]{SUNBURST-path.png}
+    \caption{Source: \cite{BrokenTrustHerrEtAl} }
+    \label{fig:SUNBURSTPath}
+\end{figure}
 
 \subsection*{Intended Usage Domain and Penetration Strategy}
 SUNBURST targeted the software supply chain rather than a particular target. It's vehicle was the Orion legitimate updates, which gave it reach into federal civilian agencies,
@@ -164,6 +170,20 @@ trojanized build artifact
     any artifacts left over from the attack.
 \end{itemize}
 \subsection{Distinctive Technical Features}
+\begin{itemize}
+    \item Exploitation of code provenance and trusted signing: SUNBURST's distribution inside legitimate signed binaries nullified at the time many traditional
+    trust controls. The adversary weaponizes the very mechanisms that industry leaders rely on to verify software authenticity. This elevated a single compromise to a global vector of trust distribution.
+    \item Protocol impersonation and C2 camouflage: SUNBURST mimicked legitimate Orion communications and used application layer behaviors to blend  C2 with normal monitoring traffic.
+    The exploit's use of HTTP/DNS channels with encoded payloads and intermittent, low volume callbacks made detection using simple network indicators extremely difficult.
+    \item Context aware activation: The artifact incorporated logic to delay activation and to selectively target environments and hosts, ensuring that the adversary only escalated activity
+    where intelligence value justified increase risk. This surgical selectivity meant widespread infection did not equate to widespread exploitation, reducing the probability of early detection.
+    \item Two stage model (stealthy loader + follow-on tooling): SUNBURST served as a stealthy, survivable loader. NOBELIUM followed up with custom
+    loaders(TEARDROP/Cobalt Strike) to perform noisier operations once select targets were identified\cite{MicrosoftDeepDiveSOLORIGATE}. This seperation
+    of responsiobilities amplified the campaign's effectiveness and allowed NOBELIUM to remain undetected for months.
+    \item Operational trade craft: Documented behavior shows deliberate removal of artifacts from the build environment. Low noise hands-on-keyboard 
+    operations in victims networks have been logged and analyzed. The combination of careful evidence cleanup and patient, long term
+    surveillance that allowed for months of intelligence harvest without public detection, constituted into the hallmarks of state-level trade craft. 
+\end{itemize}
 
 
 
@@ -173,8 +193,43 @@ trojanized build artifact
 % full CIA triad impact, broader consequences, preventive and 
 % punitive responses, lessons learned.
 
+SUNBURST did more than steal secrets, it provided a playbook. The fundamental idea of subverting trusted vendor channels to deliver malicious code at
+scale turned into a template for later actors. The method's potency relies on exploiting trust(signed updates, vendor attestation, and auto patching)
+rather than a single technical vulnerability. In short, the technique persisted conceptually and evolved operationally. Attackers learned to be more
+surgical, improving the camouflaged C2 as they went by with their surveillance. They mixed bespoke implants with commodity tooling so that each compromise
+could be converted into a targeted intelligence operation. The legacy of SUNBURST is then twofold. An enduring template for high-stakes espionage and
+a continuing arms race that forces both vendor and consumer practices to change.
+\subsection{Full CIA Triad Impact}
+\subsubsection*{Confidentiality (C)}
+SUNBURST inflicted severe confidentiality breaches. By inserting a persistent stealthy backdoor into Orion, NOBELIUM gained access to email systems,
+source-code repositories, secret documents, and internal communications. The theft of classified information without detection was the attack's primary
+goal.
+\subsubsection*{Integrity (I)}
+Integrity was undermined at a foundational level. NOBELIUM altered the source of software artifacts, turning vendor signed binaries into vehicles
+for malicious code. This corrupted the very notion of "trust" and damaged confidence in update streams and signed mechanisms. In victim networks,
+attackers manipulated configuration, inserted backdoors, and in some observed instances altered logs or other forensic data, actions that complicated
+accurate reconstruction of events.
+\subsubsection*{Availability (A)}
+Although the SolarWinds campaign primarily sought espionage rather than widespread disruption, availability was indirectly threatened. The compromise
+exposed privileged access paths that could be repurposed to disrupt services, derail incident response, or create conditions for DOS(Denial of Service)
+or destructive attacks. Moreover, the domino affect due to the compromise of trust produced real availability costs for organizations that had to take
+their systems offline or restrict operations to remediate risk.
 
-Discussion text here.
+\subsection{Broader consequences}
+SUNBURST exposed systematic weaknesses in assumptions about software provenance and the limits or perimeter defenses. Organizations discovered
+that signature-based update verification could be insufficient against an adversary that controls code at the source. The incident accelerated
+interest in supply-chain hardening practices and in runtime behavioral and telemetry analysis that can detect malicious activity despite valid 
+signatures.\\
+The breach generated tangible economic costs as well. It reshaped procurement and vendor-risk calculus, buyers increasingly demanded stronger
+contractual cybersecurity assurance, existence of breach disclosure terms, and pushed for transparent vendor build practices.\\
+At a strategic level, the campaign deepened mistrust between nation-states and highlighted cyber espionage as a tool for geopolitical leverage.
+The operation demonstrated the asymmetry of cyber power, disproportionate access to another state's secrets without any brute force. This reality
+intensified calls for international cyber norms, attribution mechanisms, and coordinated defensive postures among allied nations.\\
+Regulators and policymakers used the incident to justify stricter disclosure rules, supply-chain audits, and incident reporting requirements\cite{NCSC2021FurtherTTPsSVR}.
+The incident also energized discussions about sanctions and legal conmsequences for state-linked actors, and it spurred legal scrutiny of vendor liability
+and responsibilities to secure their build processes.
+\subsection{Preventive and Punitive Responses}
+\subsection{Lessons Learned}
 
 \section{Conclusion}
 %key findings, recommendations, future implications, and limitations.
@@ -184,33 +239,15 @@ Conclusion text here.
 
 \section*{Citations}
 
-Please number citations consecutively within brackets \cite{b1}. The 
-sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference 
-number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at 
-the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
 
-Number footnotes separately in superscripts. Place the actual footnote at 
-the bottom of the column in which it was cited. Do not put footnotes in the 
-abstract or reference list. Use letters for table footnotes.
-
-Unless there are six authors or more give all authors' names; do not use 
-``et al.''. Papers that have not been published, even if they have been 
-submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers 
-that have been accepted for publication should be cited as ``in press'' \cite{b5}. 
-Capitalize only the first word in a paper title, except for proper nouns and 
-element symbols.
-
-For papers published in translation journals, please give the English 
-citation first, followed by the original foreign-language citation \cite{b6}.
-
-\begin{thebibliography}{00}
+\begin{thebibliography}{}
 \bibitem{Microdoft2024NOBELIUM} Microsoft, ``Nation State Actors Midnight Blizzard,'' \emph{Microsoft Security Insider}, Jan. 25, 2024. [Online]. Available: \url{https://www.microsoft.com/en-us/security/security-insider/threat-landscape/midnight-blizzard}. [Accessed: Sept. 29, 2025].
 \bibitem{MITREFirstNOBELIUMAttack} MITRE, ``Operation Ghost (Campaign C0023),'' \emph{MITRE ATT\&CK}. [Online]. Available: \url{https://attack.mitre.org/campaigns/C0023/}. [Accessed: Sept. 29, 2025].
 \bibitem{MicrosoftDeepDiveSOLORIGATE} Microsoft Cyber Defense Operations Center and Microsoft Threat Intelligence, ``Deep Dive into the Solorigate Second-Stage Activation: From SUNBURST to TEARDROP and Raindrop,'' \emph{Microsoft Security Blog}, Jan. 20, 2021. [Online]. Available: \url{https://www.microsoft.com/en-us/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/}. [Accessed: Sept. 29, 2025].
 \bibitem{CoreTech2022Motivations} CoreTech Staff, ``6 Motivations of Cyber Criminals,'' \emph{CoreTech Blog}, Mar. 3, 2022. [Online]. Available: \url{https://www.coretech.us/blog/6-motivations-of-cyber-criminals}. [Accessed: Sept. 29, 2025].
 \bibitem{HakalaMelnychuk2021RussiaCyberStrategy} J. Hakala and J. Melnychuk, *Russia’s Strategy in Cyberspace*, NATO Strategic Communications Centre of Excellence, Riga, Latvia, Jun. 2021. [Online]. Available: \url{https://stratcomcoe.org/cuploads/pfiles/Nato-Cyber-Report_11-06-2021-4f4ce.pdf}. [Accessed: Sept. 29, 2025].
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+\bibitem{NCSC2021FurtherTTPsSVR} National Cyber Security Centre (UK), ``Advisory: Further TTPs Associated with SVR Cyber Actors,'' May 2021. [Online]. Available: \url{https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf}. [Accessed: Sept. 30, 2025].
+\bibitem{BrokenTrustHerrEtAl} T. Herr, W. Loomis, E. Schroeder, S. Scott, S. Handler, and T. Zuo, *Broken Trust: Lessons from Sunburst*, Atlantic Council, Scowcroft Center / Cyber Statecraft Initiative, Mar. 2021. [Online]. Available: \url{https://www.atlanticcouncil.org/wp-content/uploads/2021/03/BROKEN-TRUST.pdf}. [Accessed: Sept. 30, 2025].
 \end{thebibliography}
 \vspace{12pt}
 \color{red}
