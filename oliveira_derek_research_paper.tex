@@ -3,6 +3,8 @@
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{cite}
 \usepackage{url}
+\usepackage{fancyvrb}
+\usepackage[svgnames]{xcolor}
 \usepackage{graphicx, float}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
@@ -85,23 +87,46 @@ to 2013, when European and American ministries of foreign affairs reported data 
 through an incident that was latter named "Operation Ghost."\cite{MITREFirstNOBELIUMAttack} NOBELIUM is known for manipulating trust
 withing security systems, falsifying digital certificates, virtually impersonating IT managers, and distorting security protocols
 to reach their goals. These operations and tactics demonstrated NOBELIUM's strategic focus on infiltrating
-high value targets and security long-term access to sensitive information.\\
+high value targets and securing long-term access to sensitive information.\\
+
 \subsection{History of Development}
-The SolarWinds campaign unfolded over an extended timeline. Initial reconnaissance and infiltration of SolarWinds'
-infrastructure likely began as early as September 2019\cite{MicrosoftDeepDiveSOLORIGATE}, with the attackers
-quietly embedding themselves into the company's software build process. By March 2020, malicious updates of the Orion
-software, later dubbed SUNBURST or SOLORIGATE, were digitally signed and distributed to SolarWinds' global customer base.
-For months, the attackers maintained undetected access, refining their foothold and carefully selecting targets before the 
-public disclosure on December 12, 2020. This deliberate pacing highlights NOBELIUM's patient and methodical approach to 
-cyber-espioage.
+The SolarWinds campaign unfolded over an extended timeline, as illustrated in Fig. \ref{fig:Timeline-of-Solorigate-attacks}. Initial 
+reconnaissance and infiltration of SolarWinds’ infrastructure began as early as September 4, 2019,when NOBELIUM quietly embedded itself 
+into the company’s software build process. By September 12, 2019, malicious test code had been injected into SolarWinds’ servers without
+ detection, allowing the attackers to gather critical data and refine their ultimate payload, SUNBURST.\cite{MicrosoftDeepDiveSOLORIGATE}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=3in]{Timeline-of-Solorigate-attacks.png}
+    \includegraphics[width=3.4in]{Timeline-of-Solorigate-attacks.png}
     \caption{Image created by the MSTIC team on the timeline of events that led to the discovery of the SolarWinds
     breach.\\Source: \cite{MicrosoftDeepDiveSOLORIGATE} }
     \label{fig:Timeline-of-Solorigate-attacks}
 \end{figure}
 
+On February 20, 2020, NOBELIUM compiled a stable build of SUNBURST and deployed it within SolarWinds’ build environment. The malware was 
+designed to lie dormant, waiting for legitimate Orion software updates to be compiled before injecting its backdoor code. This ensured that 
+once updates were distributed, thousands of unsuspecting customers—including U.S. government agencies and major corporations—would unknowingly 
+install compromised versions of Orion. By March 2020, this supply-chain compromise had effectively created persistent, stealthy backdoors across 
+SolarWinds’ global customer base.\cite{MicrosoftDeepDiveSOLORIGATE}
+
+Two months later, NOBELIUM expanded its operations by deploying TEARDROP, a custom loader for Cobalt Strike, against selected high-value targets.
+ This allowed the attackers to escalate privileges, move laterally, and prepare for their true objectives with minimal detection. On June 4, 2020, 
+ they removed all traces of malware from SolarWinds’ build environment, an act that further obscured their presence and erased forensic evidence.
+  At this stage, no indicators of compromise remained within SolarWinds’ infrastructure, leaving investigators with few clues.\cite{MicrosoftDeepDiveSOLORIGATE}
+
+For months afterward, “hands-on-keyboard” activity persisted, as NOBELIUM conducted real-time surveillance, extracted sensitive documents, and engaged 
+in credential theft across infiltrated networks. Their covert campaign continued largely unnoticed until December 12, 2020—more than a year after initial 
+access—when SolarWinds publicly disclosed the breach of its Orion software and the unprecedented compromise of its customers’ systems.\cite{MicrosoftDeepDiveSOLORIGATE}
+
+
+
+\subsection{Purpose and Motivation}
+Unlike cybercriminal groups motivated primarily by financial gain\cite{CoreTech2022Motivations}, NOBELIUM's campaign was politically driven. Its purpose was espionage, not profit. By exploiting SolarWinds'
+trusted softare supply chain, the group gained covert entry into U.S. government agencies, including the department of homeland security, the Treasury department, and parts of the
+pentagon, as well as major corporations in technology and critical infrastructure. The Intelligence collected had potential value for strategic leverage, diplomatic advantages, and technological competition.
+\\
+The motivations behind the breach align with Russia's broader geopolitical startegy of undermining adversaries, gathering intelligence, and projecting power in the digital domain\cite{HakalaMelnychuk2021RussiaCyberStrategy}.
+By compromising secure communications, source code repositories, and decision-making processes, NOBELIUM not only accessed state secrets but also eroded confidence in the security of the west's digital
+infrastructure. The attack represents a clear departure from disruptive cyber incidents, instead embodying a long term, covert infiltration campaign designed to maximize intelligence while minimizing detection.
 
 
 
@@ -110,9 +135,37 @@ cyber-espioage.
 %Intended Usage Domain & Penetration Strategy 
 %(industry/target environment, initial access, TTPs) 
 %and Distinctive Features (innovations, what made it effective/different).
+\subsection{Overview of SUNBURST (S0559)}
+SUNBURST (MITRE S0559) was a trojanized component of SolarWinds' Orion platform that was compiled into
+signed product updates and distributed to customers. Because the malicious code was delivered inside through vendor signed updates, it bypassed many integrity and whitelist checks
+and achieved wide, trusted distribution. The implant combined application-layer mimicry, protocol obfuscation, and context-aware activation logic to remain dormant and undetected
+until it found valuable execution environment.
+
+\subsection*{Intended Usage Domain and Penetration Strategy}
+SUNBURST targeted the software supply chain rather than a particular target. It's vehicle was the Orion legitimate updates, which gave it reach into federal civilian agencies,
+parts of the intelligence and defense communities, major tech firms, and critical infrastructure operators that installed Orion for network monitoring. Environments where trusted
+vendor updates are accepted and administrators grant monitoring software broad visibility and privileges.
+\subsubsection{Initial Access}
+trojanized build artifact
+\begin{itemize}
+    \item Vector: Compromise of SolarWinds' CI/Build environment to insert malicious code into the Orion build through the masking of a legitimate dll file(SolarWinds.Orion.Core.BusinessLayer.dll).
+    The malicious file was then digitally signed and released as part of a legitimate update.\cite{MicrosoftDeepDiveSOLORIGATE}\\
+    \item Dormancy and environment checks: After installation, SUNBURST employed time delays, execution-context filtering, and logic to avoid activating in low value environments.
+    It performed checks against its command and control(C2) routines, minimizing the risk of noisy execution that could trigger detection.\cite{MicrosoftDeepDiveSOLORIGATE}\\
+    \item C2 communications: SUNBURST established covert C2 over common application protocols, mainly http, and through DNS techniques. Its C2 used obscured payloads, in the likes
+    of base64 junk data, and dynamically resolved domains resembling trusted services, bypassing network signature detection and blending in with normal traffic.\cite{MicrosoftDeepDiveSOLORIGATE}\\
+    \item Secondary payload staging: Once a high value target was identified, SUNBURST was a starting point for the delivery of the second payload, mainly TEARDROP or other cobalt strike loaders.
+    This second stage had the attackers perform hands-on keyboard operations to harvest credentials, lateral movement, and data collection.\cite{MicrosoftDeepDiveSOLORIGATE}\\
+    \item Persistence and cleanup: SUNBURST used standard persistence mechanisms and then later removed artifacts from the SolarWinds' build environment to delay incidence responses
+    and forensic analysis.\cite{MicrosoftDeepDiveSOLORIGATE}\\
+    \item Why it was so effective: Vendor signatures and normal updates processes caused endpoint and update-management systems to treat the payload as 'authentic' software
+    rather than malicious code, completely skipping through the safety layer of hash based integrity checks. Covert C2 communications where established and hashed for dificult network signature detection.
+    SUNBURST maintained a persistent foothold on SolarWinds' build environment and guaranteed its back door remained open throughout the duration of the operation, deleting itself from existance after cleaning 
+    any artifacts left over from the attack.
+\end{itemize}
+\subsection{Distinctive Technical Features}
 
 
-Analysis text here.
 
 
 \section*{Discussion}
@@ -154,8 +207,8 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \bibitem{Microdoft2024NOBELIUM} Microsoft, ``Nation State Actors Midnight Blizzard,'' \emph{Microsoft Security Insider}, Jan. 25, 2024. [Online]. Available: \url{https://www.microsoft.com/en-us/security/security-insider/threat-landscape/midnight-blizzard}. [Accessed: Sept. 29, 2025].
 \bibitem{MITREFirstNOBELIUMAttack} MITRE, ``Operation Ghost (Campaign C0023),'' \emph{MITRE ATT\&CK}. [Online]. Available: \url{https://attack.mitre.org/campaigns/C0023/}. [Accessed: Sept. 29, 2025].
 \bibitem{MicrosoftDeepDiveSOLORIGATE} Microsoft Cyber Defense Operations Center and Microsoft Threat Intelligence, ``Deep Dive into the Solorigate Second-Stage Activation: From SUNBURST to TEARDROP and Raindrop,'' \emph{Microsoft Security Blog}, Jan. 20, 2021. [Online]. Available: \url{https://www.microsoft.com/en-us/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/}. [Accessed: Sept. 29, 2025].
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
+\bibitem{CoreTech2022Motivations} CoreTech Staff, ``6 Motivations of Cyber Criminals,'' \emph{CoreTech Blog}, Mar. 3, 2022. [Online]. Available: \url{https://www.coretech.us/blog/6-motivations-of-cyber-criminals}. [Accessed: Sept. 29, 2025].
+\bibitem{HakalaMelnychuk2021RussiaCyberStrategy} J. Hakala and J. Melnychuk, *Russia’s Strategy in Cyberspace*, NATO Strategic Communications Centre of Excellence, Riga, Latvia, Jun. 2021. [Online]. Available: \url{https://stratcomcoe.org/cuploads/pfiles/Nato-Cyber-Report_11-06-2021-4f4ce.pdf}. [Accessed: Sept. 29, 2025].
 \bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
 \bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
 \end{thebibliography}
