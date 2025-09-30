@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1759258852.36548 "/home/dereko/code/UCF_CIS-3360/oliveira_derek_research_paper.tex" "oliveira_derek_research_paper.pdf" "oliveira_derek_research_paper" 1759258852.84869 0
-  "/home/dereko/code/UCF_CIS-3360/oliveira_derek_research_paper.tex" 1759258851.76768 22443 458d02080243e1beaba87c093dd805ff ""
+["pdflatex"] 1759260478.14561 "/home/dereko/code/UCF_CIS-3360/oliveira_derek_research_paper.tex" "oliveira_derek_research_paper.pdf" "oliveira_derek_research_paper" 1759260478.82235 0
+  "/home/dereko/code/UCF_CIS-3360/oliveira_derek_research_paper.tex" 1759260477.41849 23984 b08e9e5138867a358b2aa6338c1f4760 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -72,10 +72,11 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1758989610 5528139 daf1353d2d3d7fed9df2ebbf1b26218e ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1758989654 3628774 22355f5a7da369a7f3a7020b2e06b19a ""
   "/usr/local/texlive/2025/texmf.cnf" 1758989602.32272 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
+  "Figures/AfterMath-Timeline.png" 1759258915.11912 262382 8e3bd69b6b0efee07976e0364aaa508a ""
   "Figures/SUNBURST-path.png" 1759258455.38178 64232 63acc5be5a838c41d96f58d292ca14b3 ""
   "Figures/Timeline-of-Solorigate-attacks.png" 1759173951.64796 99597 04206e2e9aa4e72845a1390bcb289a13 ""
-  "oliveira_derek_research_paper.aux" 1759258852.80569 3241 32cd93579ca3c5c3bbdc4786a4acd4ab "pdflatex"
-  "oliveira_derek_research_paper.tex" 1759258851.76768 22443 458d02080243e1beaba87c093dd805ff ""
+  "oliveira_derek_research_paper.aux" 1759260478.75605 3502 d87f459d70ebad8c31edb12c976e00ee "pdflatex"
+  "oliveira_derek_research_paper.tex" 1759260477.41849 23984 b08e9e5138867a358b2aa6338c1f4760 ""
   (generated)
   "oliveira_derek_research_paper.aux"
   "oliveira_derek_research_paper.log"
