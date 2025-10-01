@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1759260478.14561 "/home/dereko/code/UCF_CIS-3360/oliveira_derek_research_paper.tex" "oliveira_derek_research_paper.pdf" "oliveira_derek_research_paper" 1759260478.82235 0
-  "/home/dereko/code/UCF_CIS-3360/oliveira_derek_research_paper.tex" 1759260477.41849 23984 b08e9e5138867a358b2aa6338c1f4760 ""
+["pdflatex"] 1759320045.61201 "/home/dereko/code/UCF_CIS-3360/oliveira_derek_research_paper.tex" "oliveira_derek_research_paper.pdf" "oliveira_derek_research_paper" 1759320046.18277 0
+  "/home/dereko/code/UCF_CIS-3360/oliveira_derek_research_paper.tex" 1759320045.44568 25179 9d6d9787190bccdf24f966319e003d7d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -75,8 +75,8 @@
   "Figures/AfterMath-Timeline.png" 1759258915.11912 262382 8e3bd69b6b0efee07976e0364aaa508a ""
   "Figures/SUNBURST-path.png" 1759258455.38178 64232 63acc5be5a838c41d96f58d292ca14b3 ""
   "Figures/Timeline-of-Solorigate-attacks.png" 1759173951.64796 99597 04206e2e9aa4e72845a1390bcb289a13 ""
-  "oliveira_derek_research_paper.aux" 1759260478.75605 3502 d87f459d70ebad8c31edb12c976e00ee "pdflatex"
-  "oliveira_derek_research_paper.tex" 1759260477.41849 23984 b08e9e5138867a358b2aa6338c1f4760 ""
+  "oliveira_derek_research_paper.aux" 1759320046.13874 3535 2f498da3982b41b3f2a4e35c1941b047 "pdflatex"
+  "oliveira_derek_research_paper.tex" 1759320045.44568 25179 9d6d9787190bccdf24f966319e003d7d ""
   (generated)
   "oliveira_derek_research_paper.aux"
   "oliveira_derek_research_paper.log"
