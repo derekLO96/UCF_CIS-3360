@@ -118,7 +118,11 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmrc7t.tfm
+INPUT ./Figures/Timeline-of-Solorigate-attacks.png
+INPUT ./Figures/Timeline-of-Solorigate-attacks.png
+INPUT ./Figures/Timeline-of-Solorigate-attacks.png
 OUTPUT oliveira_derek_research_paper.pdf
+INPUT ./Figures/Timeline-of-Solorigate-attacks.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
@@ -136,10 +140,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmbi8r.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmrc7t.vf
-INPUT ./Figures/Timeline-of-Solorigate-attacks.png
-INPUT ./Figures/Timeline-of-Solorigate-attacks.png
-INPUT ./Figures/Timeline-of-Solorigate-attacks.png
-INPUT ./Figures/Timeline-of-Solorigate-attacks.png
 INPUT ./Figures/SUNBURST-path.png
 INPUT ./Figures/SUNBURST-path.png
 INPUT ./Figures/SUNBURST-path.png
